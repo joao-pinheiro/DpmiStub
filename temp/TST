@@ -1,0 +1,21 @@
+
+
+.model large,pascal
+.386p
+Locals
+
+Include ..\include\Segs.Inc
+Include ..\include\Stub.inc
+Include ..\include\Defs.Inc
+Include ..\include\DpmiLib.Inc
+Include ..\include\DosLib.Inc
+
+Segment32
+
+public _main
+_main proc
+
+       ret
+      endp
+endsegment32
+end

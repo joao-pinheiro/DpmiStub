@@ -1,0 +1,87 @@
+;--------------------------------------------------------------------
+;
+;  DpmiLib
+;  Rotina de Funcoes DPMI
+;
+;  (c) 2000 Joao Pinheiro
+;
+;--------------------------------------------------------------------
+
+
+#####################################################################
+
+Fn: _DpmiAllocDescriptors
+
+Arg: Count:Dword
+
+Ret: AX - Selector ou 0
+
+ Esta função aloca Count Descriptors e retorna em Ax o 1º Selector
+ou 0 se falhou.
+
+#####################################################################
+
+Fn: _DpmiFreeDescriptor
+
+Arg: Selector:Dword
+
+Ret: AX - 1 se foi bem-sucedido
+
+ Esta função liberta um descriptor previamente alocado.
+
+#####################################################################
+
+Fn: _DpmiSegment2Descriptor
+
+Arg: Segment:Dword
+
+Ret: AX - Selector ou 0 se falhou
+
+ Esta função aloca 1 descriptor q mapeia o segmento Segment. Retorna
+o selector ou 0 se falhou.
+
+#####################################################################
+
+Fn: _DpmiGetBase
+
+Arg: Selector:Dword
+
+Ret: Edi - Endereço linear da base do descriptor
+
+ Esta função Retorna o endereço linear da base do descriptor.
+
+#####################################################################
+
+Fn: _DpmiSetBase
+
+Arg: Selector:Dword, BaseAddx:dword
+
+Ret: Eax - verdadeiro/falso
+
+ Esta função seta o endereço de base do descriptor para baseaddx e 
+retorna 1 ou 0 conforme foi bem-sucedida ou não.
+
+#####################################################################
+
+Fn: _DpmiSetLimit
+
+Arg: Selector:Dword, LimitAddx:dword
+
+Ret: Eax - verdadeiro/falso
+
+ Esta função seta o endereço de Limite do descriptor para limitaddx e 
+retorna 1 ou 0 conforme foi bem-sucedida ou não.
+
+#####################################################################
+
+Fn: _DpmiSetAccessR
+
+Arg: Selector:Dword, AccessRights:dword
+
+Ret: Eax - verdadeiro/falso
+
+ Esta função seta os access rights e type byte do descriptor e 
+retorna 1 ou 0 conforme foi bem-sucedida ou não.
+
+#####################################################################
+dpmi 009

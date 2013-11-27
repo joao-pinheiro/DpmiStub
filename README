@@ -1,0 +1,3 @@
+This repository contains a DPMI stub to allow 32 bit console-based applications to work on Windows. It features its own heap manager.
+Consider all the code written by me in this repository to be licensed under the 2-clause BSD license.
+
